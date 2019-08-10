@@ -17,3 +17,6 @@
 .byebug_history
 public/uploads
 
+# コミットしたくないファイル、ディレクトリを指定できる設定ファイル
+# 画像が保存される、public/udatesディエクトリをここに追加
+public/udates/*
