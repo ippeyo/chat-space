@@ -6,7 +6,7 @@
 |------|----|-------|
 | name | string | null: false, unique: true |
 | email | string | null: false, unique: true  |
-| password | string |
+| password | string | null: false, unique: true  |
 
 ### Association
 - has_many :groups, through: :groups_users
