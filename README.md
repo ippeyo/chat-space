@@ -1,24 +1,53 @@
-# README
+# DataBaseDesign
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+|Column|Type|Options|
+|------|----|-------|
+| name | string | null: false, unique: true |
+| email | string | null: false, unique: true  |
+| password | string |
 
-* Ruby version
+### Association
+- has_many :groups, through: :groups_users
+- has_many :massages
 
-* System dependencies
+***
 
-* Configuration
+## groupsテーブル
 
-* Database creation
+|Column|Type|Options|
+|------|----|-------|
+| name | string | null: false, unique: true |
 
-* Database initialization
+### Association
+- has_many :users, through: :groups_users
+- has_many :massages
 
-* How to run the test suite
+***
 
-* Services (job queues, cache servers, search engines, etc.)
+## massagesテーブル
 
-* Deployment instructions
+|Column|Type|Options|
+|------|----|-------|
+| body | text | null: false |
+| image | text | |
+| user_id | integer |  foreign_key: true |
+| group_id | integer |  foreign_key: true |
 
-* ...
+### Association
+- belongs_to :user
+- belongs_to :user
+
+***
+
+## groups_usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id | integer | null: false, foreign_key: true |
+|group_id | integer | null: false, foreign_key: true |
+
+### Association
+- belongs_to :group
+- belongs_to :user
