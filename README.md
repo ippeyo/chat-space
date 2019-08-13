@@ -9,6 +9,7 @@
 ### Association
 - has_many :groups, through: :groups_users
 - has_many :massages
+- has_many :groups_users
 
 ***
 
