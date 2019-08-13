@@ -5,8 +5,6 @@
 |Column|Type|Options|
 |------|----|-------|
 | name | string | null: false, unique: true,index: true |
-| email | string | null: false, unique: true  |
-| password | string | null: false, unique: true  |
 
 ### Association
 - has_many :groups, through: :groups_users
