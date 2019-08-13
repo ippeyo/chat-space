@@ -26,14 +26,14 @@
 
 ***
 
-## massagesテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 | body | text | |
 | image | text | |
-| user_id | integer |  foreign_key: true |
-| group_id | integer |  foreign_key: true |
+| user | reference | null: false, foreign_key: true |
+| group | reference | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
