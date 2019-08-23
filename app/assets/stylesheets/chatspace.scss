@@ -11,17 +11,17 @@
     display: flex;
     align-items: center;
     padding: 0 20px;
-  }
-  .side-header__box {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    font-weight: bold;
-  }
-  .side-header__box__menu {
-    display: flex;
-    li {
-      margin-left: 0.3rem;
+    &__box {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-weight: bold;
+      &__menu {
+        display: flex;
+        li {
+          margin-left: 0.3rem;
+        }
+      }
     }
   }
   .groups {
@@ -31,17 +31,16 @@
     overflow: scroll;
     .group {
       margin-bottom: 40px;
-    }
-    .group__group-name {
-      font-size: 15px;
-      margin-bottom: 5px;
-    }
-    .group__latest-message {
-      font-size: 11px;
-    }
+      &__group-name {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      &__latest-message {
+        font-size: 11px;
+      }
+    }    
   }
 }
-
 .chat-main {
   width: calc(100vw - 300px);
   float: left;
@@ -52,38 +51,38 @@
     justify-content: space-between;
     border-bottom: solid 1px #eee;
     overflow: scroll;
-  }
-  .main-header__left-box {
-    margin-top: 35px;
-  }
-  .main-header__left-box__current-group {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 15px;
-  }
-  .main-header__left-box__member-list {
-    display: flex;
-    font-size: 12px;
-    color: $lightgray;
-    li + li {
-      margin-left: 0.3rem;
+    &__left-box {
+      margin-top: 35px;
+      &__current-group {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 15px;
+      }
+      &__member-list {
+        display: flex;
+        font-size: 12px;
+        color: $lightgray;
+        li + li {
+          margin-left: 0.3rem;
+        }
+      }
     }
-  }
-  .main-header__edit-btn {
-    height: 40px;
-    line-height: 40px;
-    padding: 0 20px;
-    margin-top: 30px;
-    border: solid 1px $lightblue;
-    position: absolute;
-    right: 40px;
-  }
-  .main-header a {
-    color: $lightblue;
-    &:visited, &:hover, &:active {
+    &__edit-btn {
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      margin-top: 30px;
+      border: solid 1px $lightblue;
+      position: absolute;
+      right: 40px;
+    }
+    & a {
       color: $lightblue;
+      &:visited, &:hover, &:active {
+        color: $lightblue;
+      }
     }
-  }
+  }  
   .messages {
     height: calc(100vh - 190px);
     padding: 46px 40px;
@@ -91,26 +90,26 @@
     overflow: scroll;
     .message {
       padding-bottom: 40px;
-    }
-    .message__upper-info {
-      display: flex;
-      margin-bottom: 10px;
-    }
-    .message__upper-info__talker {
-      color: $black;
-      font-size: 16px;
-      font-weight: bold;
-    }
-    .message__upper-info__date {
-      color: $lightgray;
-      font-size: 12px;
-      margin-left: 10px;
-    }
-    .message__text {
-      color: $black;
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
+      &__upper-info {
+        display: flex;
+        margin-bottom: 10px;
+        &__talker {
+          color: $black;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date {
+          color: $lightgray;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      }
+      &__text {
+        color: $black;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+    } 
   }
   .form {
     height: 90px;
@@ -121,23 +120,23 @@
       .input-box {
         position: relative;
         width: 100%;
-      }
-      .input-box__text {
-        height: 50px;
-        width: 100%;
-        padding: 0 40px 0 10px;
-        color: $black;
-        border-style: none;
-      }
-      .input-box__image {
-        font-size: 1.3rem;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-      }
-      .input-box__image__file {
-        display: none;
+        &__text {
+          height: 50px;
+          width: 100%;
+          padding: 0 40px 0 10px;
+          color: $black;
+          border-style: none;
+        }
+        &__image {
+          font-size: 1.3rem;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+          &__file {
+            display: none;
+          }
+        }
       }
       .submit-btn {
         width: 100px;
