@@ -1,19 +1,5 @@
 .chat-side
-  .side-header
-    .side-header__box
-      %p.side-header__box__user-name ryu
-      %ul.side-header__box__menu
-        %li.side-header__box__menu__new-group
-          = link_to  class: "/groups/new" do
-            %i.fa.fa-edit
-        %li.side-header__box__menu__edit-user
-          = link_to  class: "/users/edit" do
-            %i.fa.fa-cog
-  .groups
-    = link_to  class: "/groups/messages" do
-      .group
-        %p.group__group-name sampleグループ
-        %p.group__latest-message ど
+  = render 'shared/side_bar'
 .chat-main
   .main-header
     .main-header__left-box
