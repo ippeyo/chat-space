@@ -13,7 +13,9 @@
   .groups
     .group
       - current_user.groups.each do |group|  
-        = link_to  class: "/groups/messages" do
+        = link_to group_messages_path(group) do
           .group
-            %p.group__group-name sampleグループ
-            %p.group__latest-message ど
+            .group__group-name
+              = group.name
+            .group__latest-message
+              メッセージはまだありません。
