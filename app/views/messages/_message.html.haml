@@ -1,29 +1,11 @@
 .message
   .message__upper-info
-    %p.message__upper-info__talker ryu
-    %p.message__upper-info__date 2019/08/21(Wed) 21:31:23
-  %p.message__text ど
-  .message__upper-info
-    %p.message__upper-info__talker ryu
-    %p.message__upper-info__date 2019/08/21(Wed) 21:31:23
-  %p.message__text ら
-  .message__upper-info
-    %p.message__upper-info__talker ryu
-    %p.message__upper-info__date 2019/08/21(Wed) 21:31:23
-  %p.message__text ご
-  .message__upper-info
-    %p.message__upper-info__talker ryu
-    %p.message__upper-info__date 2019/08/21(Wed) 21:31:23
-  %p.message__text ん
-  .message__upper-info
-    %p.message__upper-info__talker ryu
-    %p.message__upper-info__date 2019/08/21(Wed) 21:31:23
-  %p.message__text ぼ
-  .message__upper-info
-    %p.message__upper-info__talker ryu
-    %p.message__upper-info__date 2019/08/21(Wed) 21:31:23
-  %p.message__text ーーー
-  .message__upper-info
-    %p.message__upper-info__talker ryu
-    %p.message__upper-info__date 2019/08/21(Wed) 21:31:23
-  %p.message__text る
+    .message__upper-info__talker
+      = message.user.name
+    .message__upper-info__date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .lower-message
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
