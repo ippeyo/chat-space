@@ -1,10 +1,6 @@
 $(function(){
   function buildMessageHtml(message){
-    var img = ""; 
-    if(message.image.url !== null){
-      var img =  `<img class="lower-message__image" src='${message.image.url}'></img>`;
-    }
-
+    var addImage = (message.image !== null) ? `<img class = "lower-message__image", src="${message.image.url}">` : '' 
     var html = `<div class="message" data-message-id="${message.id}">
                   <div class="message__upper-info">
                     <div class="message__upper-info__talker">
@@ -17,13 +13,13 @@ $(function(){
                   <div class="lower-message">
                     <p class="lower-message__content">
                       ${message.content}
+                    </p>
+                    <p class = "user-image">
+                      ${addImage}
                     </p>`
-                      + img
-                  + `</div>
-                </div>`
-                console.log(img);
-    return html;
+    return html
   }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -39,8 +35,8 @@ $(function(){
     .done(function(data){
       var html = buildMessageHtml(data);
       $('.messages').append(html);
-      $('.input-box__text').val('');
-      $('.input-box__image__file').val('');
+      $('.input-box__text')[0].reset();
+      $('.input-box__image__file')[0].reset();
       $('.submit-btn').prop('disabled', false);
       $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');
       leastMessage = data;
