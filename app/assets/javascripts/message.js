@@ -1,6 +1,6 @@
 $(function(){
   function buildMessageHtml(message){
-    var addImage = (message.image !== null) ? `<img class = "lower-message__image", src="${message.image.url}">` : '' 
+    var addImage = (message.image !== null) ? `<img class = "lower-message__image", src="${message.image.url}">` : '' ;
     var html = `<div class="message" data-message-id="${message.id}">
                   <div class="message__upper-info">
                     <div class="message__upper-info__talker">
@@ -14,9 +14,11 @@ $(function(){
                     <p class="lower-message__content">
                       ${message.content}
                     </p>
-                    <p class = "user-image">
+                    <p class = "lower-message__image">
                       ${addImage}
-                    </p>`
+                    </p>
+                  <div>
+                <div>`
     return html
   }
 
@@ -35,8 +37,7 @@ $(function(){
     .done(function(data){
       var html = buildMessageHtml(data);
       $('.messages').append(html);
-      $('.input-box__text')[0].reset();
-      $('.input-box__image__file')[0].reset();
+      $("#new_message")[0].reset();
       $('.submit-btn').prop('disabled', false);
       $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');
       leastMessage = data;

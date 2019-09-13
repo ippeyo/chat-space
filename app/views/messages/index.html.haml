@@ -10,8 +10,8 @@
         %li.main-header__left-box__member-list__member 
         - @group.users.each do |user|
           = user.name
-    = link_to  class: "/groups/edit" do
-      .main-header__edit-btn Edit
+    .main-header__edit-btn
+      = link_to 'Edit', edit_group_path(@group), class: "edit_btn"
   .messages
     = render @messages
   .form
