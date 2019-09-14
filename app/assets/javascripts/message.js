@@ -25,7 +25,7 @@ $(function(){
   var interval = setInterval(function() {
     if (location.href.match(/\/groups\/\d+\/messages/)){
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-      var last_message_id = $('.message').last().data('id');
+      var last_message_id = $('.message').last().data('message-id');
       var href = 'api/messages'
       $.ajax({
         url: href,
@@ -35,8 +35,8 @@ $(function(){
       })
       .done(function(messages) {
         messages.forEach(function(message) {
-          var insertHTML = buildHTML(message)
-          $('#message').append(insertHTML)
+          var insertHTML = buildMessageHtml(message)
+          $('.messages').append(insertHTML)
           $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
         })
       })
