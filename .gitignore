@@ -23,3 +23,5 @@ public/udates/*
 
 #DS_Storeを除外
 .DS_Store
+
+config/secrets.yml
